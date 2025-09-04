@@ -6,7 +6,6 @@
     <title>Unity Web Player | Тамагоча</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-	<script src="https://telegram.org/js/telegram-web-app.js?59"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -50,10 +49,6 @@
           }, 5000);
         }
         updateBannerVisibility();
-      }
-	  
-	        if (window.Telegram && window.Telegram.WebApp) {
-          window.Telegram.WebApp.expand();
       }
 
       var buildUrl = "Build";
@@ -123,22 +118,6 @@
               }).catch((message) => {
                 alert(message);
               });
-			  
-			  var id = null;
-
-          if (window.Telegram && window.Telegram.WebApp) {
-              var WebApp = window.Telegram.WebApp;
-              WebApp.ready();
-			  var user = WebApp.initDataUnsafe.user;
-
-              id = user.id || "unknown";
-
-              window.Telegram.WebApp.disableVerticalSwipes();
-          } else {
-              id = 'Cant get id!';
-          }
-		  
-		  alert(id);
             };
 
       document.body.appendChild(script);
